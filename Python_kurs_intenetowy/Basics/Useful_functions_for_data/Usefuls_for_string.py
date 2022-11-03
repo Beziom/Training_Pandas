@@ -75,6 +75,9 @@ print("Ola ma psa, Ola ma kota".replace("Ola", "Kasia")) #Kasia ma psa, Kasia ma
 print("My name is {myName}, I'm from {country}".format(myName = "Kuba", country = "Poland" ))
 print("My name is {0}, I'm from {1}".format("Kuba","Poland" ))
 
+#Liczenie ilości liter
+print("Hello World Madagdala".count("l"))#4
+
 
 
 

@@ -5,15 +5,15 @@ import random
 class Player(pygame.sprite.Sprite): # Creating spirit class to start everything (spirit have 2 main actions (draw sprites and update sprites))
     def __init__(self):
         super().__init__()
-        player_walk_1 = pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Eivor.png").convert_alpha()
-        player_walk_2 = pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Eivor_movement.png").convert_alpha() 
+        player_walk_1 = pygame.image.load("Python_Gra\Eivor.png").convert_alpha()
+        player_walk_2 = pygame.image.load("Python_Gra\Eivor_movement.png").convert_alpha() 
         self.player_walk = [player_walk_1, player_walk_2]
         self.player_index = 0
-        self.player_jump = pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Eivor_jump.png").convert_alpha() 
+        self.player_jump = pygame.image.load("Python_Gra\Eivor_jump.png").convert_alpha() 
         self.image = self.player_walk[self.player_index]
         self.rect = self.image.get_rect(midbottom = (80,300))
         self.gravity = 0
-        self.jump_sound = pygame.mixer.Sound(r'D:\Repozytorium\Kody_Python\Python_Gra\[YT2mp3.info] - Mariusz Pudzianowski - POLSKA GÓRĄ (320kbps).mp3')
+        self.jump_sound = pygame.mixer.Sound('Python_Gra\[YT2mp3.info] - Mariusz Pudzianowski - POLSKA GÓRĄ (320kbps).mp3')
         # (r'D:\Repozytorium\Kody_Python\Python_Gra\[YT2mp3.info] - Mariusz Pudzianowski - POLSKA GÓRĄ (320kbps).mp3')
         # (r'D:\Repozytorium\Kody_Python\Python_Gra\Polska_Gurom.mp3') 
     def player_input(self):
@@ -46,13 +46,13 @@ class Obstackle(pygame.sprite.Sprite):
     def __init__(self,type):
         super().__init__()
         if type =="fly":
-            fly_frame_1 = pygame.transform.rotozoom(pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Fly.png").convert_alpha(),0,0.2)
-            fly_frame_2 = pygame.transform.rotozoom(pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Fly_movement.png").convert_alpha(),0,0.2)
+            fly_frame_1 = pygame.transform.rotozoom(pygame.image.load("Python_Gra\Fly.png").convert_alpha(),0,0.2)
+            fly_frame_2 = pygame.transform.rotozoom(pygame.image.load("Python_Gra\Fly_movement.png").convert_alpha(),0,0.2)
             self.frames = [fly_frame_1,fly_frame_2]
             y_pos = 350
         else:
-            viking_frame_1 = pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Viking.png").convert_alpha() #uploading an image - use covert for
-            viking_frame_2 = pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Viking_movement.png").convert_alpha() #uploading an image - use covert for
+            viking_frame_1 = pygame.image.load("Python_Gra\Viking.png").convert_alpha() #uploading an image - use covert for
+            viking_frame_2 = pygame.image.load("Python_Gra\Viking_movement.png").convert_alpha() #uploading an image - use covert for
             self.frames = [viking_frame_1, viking_frame_2]
             y_pos = 518
         self.animation_index = 0
@@ -140,8 +140,8 @@ obstackle_group = pygame.sprite.Group()
 test_font = pygame.font.Font(None,50) # setting up the font for different text rendering
 
 #Background object
-sky_surface = pygame.image.load(r'D:\Repozytorium\Kody_Python\Python_Gra\Sky.png').convert() #uploading an image - use covert for better 
-snow_surface = pygame.image.load(r'D:\Repozytorium\Kody_Python\Python_Gra\Snow.png').convert() #use convert to better apply on screen
+sky_surface = pygame.image.load('Python_Gra\Sky.png').convert() #uploading an image - use covert for better 
+snow_surface = pygame.image.load('Python_Gra\Snow.png').convert() #use convert to better apply on screen
 
 #Text objects
 text_surface= test_font.render("AC Valhalla - Deluxe Budget Edition",False,"Black") #Creating a title text in game loop
@@ -150,15 +150,15 @@ game_message = test_font.render("Press Space to enter the gane",True,"Black") #C
 game_message_rect = game_message.get_rect(center = (460,550)) #Rect
 
 #Viking frames creation
-viking_frame_1 = pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Viking.png").convert_alpha() #uploading an image - use covert for
-viking_frame_2 = pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Viking_movement.png").convert_alpha() #uploading an image - use covert for
+viking_frame_1 = pygame.image.load("Python_Gra\Viking.png").convert_alpha() #uploading an image - use covert for
+viking_frame_2 = pygame.image.load("Python_Gra\Viking_movement.png").convert_alpha() #uploading an image - use covert for
 viking_frames = [viking_frame_1, viking_frame_2]
 viking_frame_index = 0
 viking_surface = viking_frames[viking_frame_index]
 
 #Flu frames creation
-fly_image = pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Fly.png").convert_alpha()
-fly_image_2 = pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Fly_movement.png").convert_alpha()
+fly_image = pygame.image.load("Python_Gra\Fly.png").convert_alpha()
+fly_image_2 = pygame.image.load("Python_Gra\Fly_movement.png").convert_alpha()
 fly_frame_1 = pygame.transform.rotozoom(fly_image,0,0.2)
 fly_frame_2 = pygame.transform.rotozoom(fly_image_2,0,0.2)
 fly_frames = [fly_frame_1, fly_frame_2]
@@ -166,11 +166,11 @@ fly_frame_index = 0
 fly_surface = fly_frames[fly_frame_index]
 
 #Movable object - game
-player_walk_1 = pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Eivor.png").convert_alpha() #uploading an image - use covert for better 
-player_walk_2 = pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Eivor_movement.png").convert_alpha() #uploading an image - use covert for better 
+player_walk_1 = pygame.image.load("Python_Gra\Eivor.png").convert_alpha() #uploading an image - use covert for better 
+player_walk_2 = pygame.image.load("Python_Gra\Eivor_movement.png").convert_alpha() #uploading an image - use covert for better 
 player_walk = [player_walk_1, player_walk_2]
 player_index = 0
-player_jump = pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Eivor_jump.png").convert_alpha() #uploading an image - use covert for better 
+player_jump = pygame.image.load("Python_Gra\Eivor_jump.png").convert_alpha() #uploading an image - use covert for better 
 player_surface = player_walk[player_index]
 player_rect = player_surface.get_rect(midbottom = (100,518)) #Rect
 
@@ -178,7 +178,7 @@ player_rect = player_surface.get_rect(midbottom = (100,518)) #Rect
 obstackle_rect_list = []
 
 #Score Screen - player
-player_surface_score = pygame.image.load(r"D:\Repozytorium\Kody_Python\Python_Gra\Eivor.png").convert_alpha() # 1 Importing image
+player_surface_score = pygame.image.load("Python_Gra\Eivor.png").convert_alpha() # 1 Importing image
 player_surface_score_scaled = pygame.transform.rotozoom(player_surface_score, 0, 3)# 2. Overrite to scale 
 player_rect_score = player_surface_score_scaled.get_rect(center = (460,307))# 3. Creating rctangle 
 
@@ -280,3 +280,4 @@ while True:
 
     pygame.display.update()
     clock.tick(60)
+  

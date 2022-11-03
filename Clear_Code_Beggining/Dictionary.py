@@ -5,3 +5,6 @@ print(dict_1.get(1)) #get() unction doesn't crash
 dict_1.update({4:"D"})#adding something to dict
 dict_1[5] = "E"
 print(dict_1)
+
+if __name__ == '__main__':
+    print("The main file")
