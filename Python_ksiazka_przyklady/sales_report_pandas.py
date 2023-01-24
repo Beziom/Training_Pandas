@@ -8,7 +8,7 @@ this_dir = Path(__file__).resolve().parent
 
 # Wczytanie wszystkich plików Excela z wszystkich podfolderów w sales_data
 parts = []
-for path in (this_dir / "sales_data").rglob("*.xls*"):
+for path in (this_dir / "sales_data").rglob("*.xlsx*"):
     print(f'Reading {path.name}')
     part = pd.read_excel(path, index_col="id_transakcji")
     parts.append(part)
